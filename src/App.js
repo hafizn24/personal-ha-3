@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { createTheme, ThemeProvider, CssBaseline, Box } from '@mui/material';
+import Element from './Components/Element';
 
-function App() {
+export default function App() {
+  const font = "'Cutive Mono', monospace"
+  const fontTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+    typography: {
+      fontFamily: font,
+    },
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={fontTheme}>
+      <CssBaseline enableColorScheme />
+      <Box sx={{
+        display: { xs: 'block', sm: 'none' },
+        height: '100vh',
+        border: 1,
+        p: '64px', pb: '128px'
+      }}>
+        <Element />
+      </Box>
+    </ThemeProvider>
+  )
 }
-
-export default App;
