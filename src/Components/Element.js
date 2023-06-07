@@ -15,9 +15,8 @@ export default function Element() {
         "I'm sorry for my imperfect. I always want to make you smile and spend my time together, but I’m just a human who tries his best. Sorryy 🙏",
     ]
 
-
     return (
-        <Splide aria-label="My Favorite Images">
+        <Splide aria-label="My Favorite Images" data-splide='{"arrows":false}'>
             <SplideSlide>
                 <Grid
                     container
